@@ -393,17 +393,74 @@ footer .column > a:hover {
   }
 }
 
+/* Adicione essas media queries ao final do seu CSS */
+
+/* Para resoluções abaixo de 900px */
+@media (width < 900px) {
+  .nav-links {
+    display: none;
+  }
+  header {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  header .image {
+    grid-area: 1/1/2/2;
+  }
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pricing {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  footer {
+    grid-template-columns: 1fr 200px;
+  }
+}
+
 @media (width < 600px) {
   header .image::before {
     display: none;
   }
-  header .image-container {
-    width: 720px;
+
+  .features {
+    grid-template-columns: repeat(1, 1fr);
   }
+
   .pricing {
     grid-template-columns: repeat(1, 1fr);
   }
   footer {
     grid-template-columns: 1fr 150px;
+  }
+}
+
+/* Para dispositivos móveis */
+@media screen and (max-width: 480px) {
+  nav {
+    padding: 0.1rem 0.5rem;
+  }
+  iframe {
+    width: 240px;
+  }
+  .youtube-video {
+    width: 190px;
+  }
+  .nav-links {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links a {
+    margin-top: 0.5rem;
+  }
+
+  header .image::before {
+    font-size: 16rem;
+  }
+
+  .features .card,
+  .pricing .card,
+  .avisos .card {
+    padding: 1rem 0.5rem;
   }
 }
